@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
+
 <body>
 
 <div class="container">
@@ -35,6 +36,14 @@
 
     </form>
 
+    <br>
+
+    <a href="/dashboard">
+        <button type="button">
+            📊 View Dashboard
+        </button>
+    </a>
+
     {% if prediction %}
 
     <div class="results-grid">
@@ -48,15 +57,22 @@
             <h3>Confidence</h3>
 
             <div class="meter">
-                <div class="meter-fill" style="width: {{ confidence }}%;"></div>
+                <div class="meter-fill"
+                     style="width: {{ confidence }}%;">
+                </div>
             </div>
 
-<h2>{{ confidence }}%</h2>
+            <h2>{{ confidence }}%</h2>
         </div>
 
         <div class="card">
             <h3>Category</h3>
             <h2>{{ category }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Risk Level</h3>
+            <h2>{{ risk }}</h2>
         </div>
 
     </div>
@@ -68,6 +84,18 @@
         <ul>
             {% for reason in reasons %}
             <li>{{ reason }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div class="reason-card">
+
+        <h3>Detected URLs</h3>
+
+        <ul>
+            {% for url in urls %}
+            <li>{{ url }}</li>
             {% endfor %}
         </ul>
 

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from model import predict_message, accuracy
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -34,6 +35,26 @@ def home():
         risk=risk,
         urls=urls
     )
+
+
+@app.route("/dashboard")
+def dashboard():
+
+    data = pd.read_csv("spam.csv")
+
+    total = len(data)
+
+    spam_count = len(data[data["label"] == "spam"])
+
+    ham_count = len(data[data["label"] == "ham"])
+
+    return render_template(
+        "dashboard.html",
+        total=total,
+        spam_count=spam_count,
+        ham_count=ham_count
+    )
+
 
 if __name__ == "__main__":
     app.run(debug=True)
