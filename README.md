@@ -1,28 +1,27 @@
 # 🛡 SmartSpam AI
 
-AI Powered Spam Detection System using Machine Learning.
+AI Powered Spam Detection System built using Flask and Machine Learning.
 
 ## Features
 
-- Spam Detection
-- Confidence Score
-- Risk Level Analysis
-- URL Detection
+- Spam Message Detection
+- Confidence Score Meter
 - Spam Category Classification
+- Security Risk Analysis
 - Dashboard Analytics
-- Modern Dark UI
+- Modern Dark Theme UI
 
 ## Tech Stack
 
 - Python
 - Flask
+- Pandas
+- Scikit-Learn
 - HTML
 - CSS
 - JavaScript
-- Scikit-Learn
-- Pandas
 
-## Machine Learning Model
+## Machine Learning
 
 - TF-IDF Vectorizer
 - Multinomial Naive Bayes
@@ -31,13 +30,8 @@ AI Powered Spam Detection System using Machine Learning.
 
 96.68%
 
-## Run Project
+## Run Locally
 
 ```bash
 pip install -r requirements.txt
 python app.py
-```
-
-Open:
-
-http://127.0.0.1:5000
