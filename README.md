@@ -29,9 +29,16 @@ AI Powered Spam Detection System built using Flask and Machine Learning.
 ## Accuracy
 
 96.68%
+## Screenshots
 
+### Home Page
+![Home](ss/home1.png.png)
+
+### Spam Detection
+![Spam](ss/pos1.png.png)
 ## Run Locally
 
 ```bash
+
 pip install -r requirements.txt
 python app.py
